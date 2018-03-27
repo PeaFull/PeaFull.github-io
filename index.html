@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -85,6 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="个人主页">
 <meta property="og:description" content="这么巧，你也在网上冲浪啊">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人主页">
 <meta name="twitter:description" content="这么巧，你也在网上冲浪啊">
@@ -135,7 +136,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -184,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -250,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/27/test/" itemprop="url">test</a></h1>
+                <a class="post-title-link" href="/2018/03/27/test/" itemprop="url">hexo使用小记</a></h1>
         
 
         <div class="post-meta">
@@ -260,7 +261,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T10:53:23+08:00">
                 2018-03-27
@@ -302,8 +303,12 @@
       
         
           
-            <h1 id="测试第一篇文章"><a href="#测试第一篇文章" class="headerlink" title="测试第一篇文章"></a>测试第一篇文章</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="hexo使用小记"><a href="#hexo使用小记" class="headerlink" title="hexo使用小记"></a>hexo使用小记</h1><hr>
+<h4 id="1-关于部署到github时用户名密码报错的问题"><a href="#1-关于部署到github时用户名密码报错的问题" class="headerlink" title="1.关于部署到github时用户名密码报错的问题"></a>1.关于部署到github时用户名密码报错的问题</h4><p>刚开始部署的配置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:   </span><br><span class="line">    type: git   </span><br><span class="line">    repo: https://github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git   </span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
+<p>结果会报没有用户名密码的错误，大致如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fatal: could not read Username for &apos;GitHub · Where software is built&apos;: No error</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: Troubleshooting</span><br><span class="line">Error: bash: /dev/tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (exit code 1)</span><br><span class="line">fatal: could not read Username for &apos;GitHub · Where software is built&apos;: No erro</span><br></pre></td></tr></table></figure></p>
+<p>解决办法为修改配置为如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:    </span><br><span class="line">    type: git   </span><br><span class="line">    repo: https://&#123;yourname&#125;:&#123;yourpassword&#125;@github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
+<p>转自：<a href="https://www.zhihu.com/question/38219432" target="_blank" rel="noopener">有关使用 Hexo 和 GitHub 搭建博客，出现 hexo -d 报错如何解决？</a></p>
+<h4 id="2-配置文件一定要指明language"><a href="#2-配置文件一定要指明language" class="headerlink" title="2.配置文件一定要指明language"></a>2.配置文件一定要指明language</h4>
           
         
       
@@ -380,7 +385,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T09:57:14+08:00">
                 2018-03-26
@@ -517,7 +522,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -567,7 +572,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
