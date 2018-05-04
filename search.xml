@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[20180504随笔]]></title>
+    <url>%2F2018%2F05%2F04%2F20180504Essay%2F</url>
+    <content type="text"><![CDATA[3月份的时候了解到了Hexo，感觉还是挺有意思的，主要是很多东西需要自己折腾，而且比博客园要好看很多，就折腾了下； 其实很久都不更新博客了，3月至5月这个项目确实也没啥要记的，都是业务逻辑，也可能是自己越来越懒了，以后要养成好习惯，不论是知识点，难点还是开发中的报错，都要记录一下；得抓紧时间落实一下FD的事情；没事就练练车，提高下车技；]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[React的Ref属性在TypeScript中的写法]]></title>
+    <url>%2F2018%2F05%2F04%2FreactRefs%2F</url>
+    <content type="text"><![CDATA[React的Ref属性在TypeScript中的写法 在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码： 1234567891011121314151617181920212223242526import * as React from "react";export class CustomTextInput extends React.Component&lt;&#123;&#125;, &#123;&#125;&gt; &#123; //在此处统一定义refs public refs: &#123; textInput: HTMLInputElement, loadMoreDiv: HTMLElement &#125;; constructor() &#123; super(); &#125; componentDidMount() &#123; const loadMore = this.refs.loadMoreDiv; const myInput = this.refs.textInput; &#125; public render() &#123; return &lt;div&gt; &lt;input type="text" ref= "textInput" /&gt; &lt;div ref= "loadMoreDiv"&gt;&lt;/div&gt; &lt;/div&gt;; &#125;&#125; 转自：Strongly Typed React Refs with TypeScript]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo使用小记]]></title>
+    <url>%2F2018%2F05%2F04%2FHexo%2F</url>
+    <content type="text"><![CDATA[hexo使用小记 1. 关于部署到github时用户名密码报错的问题刚开始部署的配置如下1234deploy: type: git repo: https://github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git branch: master 结果会报没有用户名密码的错误，大致如下12345fatal: could not read Username for &apos;GitHub · Where software is built&apos;: No errorFATAL Something&apos;s wrong. Maybe you can find the solution here: TroubleshootingError: bash: /dev/tty: No such device or addresserror: failed to execute prompt script (exit code 1)fatal: could not read Username for &apos;GitHub · Where software is built&apos;: No erro 解决办法为修改配置为如下：1234deploy: type: git repo: https://&#123;yourname&#125;:&#123;yourpassword&#125;@github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git branch: master 转自：有关使用 Hexo 和 GitHub 搭建博客，出现 hexo -d 报错如何解决？ 2. 配置文件一定要指明language 3. 集成disqus评论功能进入disqus官网，点击红色框中链接，给自己的网站添加disqus，如下图接着输入你的网址，选择类别，生成shortname拿到shortname，分别添加到站点配置文件的disqus_shortname和主题配置文件的disqus中的shortname，并且将主题配置文件disqus的enable设为true 4. 如何给文章的md文件中插入图片把站点配置文件的post_asset_folder设置为true； 接着执行命令，来自hexo-asset-image；1$ npm install hexo-asset-image --save 安装好之后，在用hexo n xxx创建新文档的时候，/source/_posts文件夹内除了xxx.md文件还会有一个同名的文件夹，这个文件夹就是用来存放图片的； 最后在xxx.md中想引入图片时先，先把图片复制到xxx文件夹中，接下来直接在xxx.md中按照markdown的格式引入图片：![你想输入的替代文字](xxxx/图片名.jpg)即可 转自：hexo生成博文插入图片 5. 设置阅读全文根据文章的内容，自己在合适的位置添加 &lt;!–more–&gt;标签，使用灵活，也是Hexo推荐的方法 6. 使用local_search为站点增加搜索功能安装 hexo-generator-search，在站点的根目录下执行以下命令：1$ npm install hexo-generator-search --save 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：1$ npm install hexo-generator-searchdb --save 编辑 站点配置文件，新增以下内容到任意位置：12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件中local_search的enable为true即可 转自：hexo博客添加搜索功能 持续补充中。。。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
