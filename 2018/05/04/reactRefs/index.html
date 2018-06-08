@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="React的Ref属性在TypeScript中的写法 在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta name="description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React的Ref属性在TypeScript中的写法">
 <meta property="og:url" content="http://yoursite.com/2018/05/04/reactRefs/index.html">
 <meta property="og:site_name" content="PeaFull&#39;s Notes">
-<meta property="og:description" content="React的Ref属性在TypeScript中的写法 在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta property="og:description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-04T06:41:02.211Z">
+<meta property="og:updated_time" content="2018-06-08T03:09:09.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React的Ref属性在TypeScript中的写法">
-<meta name="twitter:description" content="React的Ref属性在TypeScript中的写法 在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta name="twitter:description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
 
 
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  138字
+                  129字
                 </span>
               
 
@@ -439,8 +439,7 @@
       
 
       
-        <h1 id="React的Ref属性在TypeScript中的写法"><a href="#React的Ref属性在TypeScript中的写法" class="headerlink" title="React的Ref属性在TypeScript中的写法"></a>React的Ref属性在TypeScript中的写法</h1><hr>
-<h4 id="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><a href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码：" class="headerlink" title="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码："></a>在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</h4><a id="more"></a>
+        <h4 id="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><a href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码：" class="headerlink" title="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码："></a>在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</h4><a id="more"></a>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CustomTextInput <span class="keyword">extends</span> React.Component&lt;&#123;&#125;, &#123;&#125;&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在此处统一定义refs</span></span><br><span class="line">    <span class="keyword">public</span> refs: &#123;</span><br><span class="line">        textInput: HTMLInputElement,</span><br><span class="line">        loadMoreDiv: HTMLElement</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="keyword">const</span> loadMore = <span class="keyword">this</span>.refs.loadMoreDiv;</span><br><span class="line">        <span class="keyword">const</span> myInput = <span class="keyword">this</span>.refs.textInput;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> render() &#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;</span><br><span class="line">            &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> ref= <span class="string">"textInput"</span> /&gt;</span><br><span class="line">            &lt;div ref= <span class="string">"loadMoreDiv"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>转自：<a href="https://goenning.net/2016/11/02/strongly-typed-react-refs-with-typescript/" target="_blank" rel="noopener">Strongly Typed React Refs with TypeScript</a></p>
 
@@ -647,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React的Ref属性在TypeScript中的写法"><span class="nav-number">1.</span> <span class="nav-text">React的Ref属性在TypeScript中的写法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><span class="nav-number">1.0.0.1.</span> <span class="nav-text">在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><span class="nav-number">1.</span> <span class="nav-text">在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</span></a></li></ol></div>
             
 
           </div>
