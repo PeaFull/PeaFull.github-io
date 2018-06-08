@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[更新cordova时出现的报错及解决方案]]></title>
+    <url>%2F2018%2F06%2F08%2FcordovaUpdate%2F</url>
+    <content type="text"><![CDATA[更新cordova时出现的报错及解决方案 今天在利用cordova build安卓apk的时候出现了报错，并且提示更新cordova，于是执行以下命令做更新：1npm install -g cordova 结果出现了报错，如下1npm WARN update-linked node_modules\cordova needs updating to 8.0.0 from 6.4.0 but we can&apos;t, as it&apos;s a symlink 在网上查了半天也没找到原因，于是尝试了先去remove再install，结果成功了，如下12npm remove -g cordovanpm install -g cordova 至于报错的原因，还有待后面研究下…]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何通过url跳转到微信公众号关注页]]></title>
+    <url>%2F2018%2F05%2F24%2FwechatFollow%2F</url>
+    <content type="text"><![CDATA[如何通过url跳转到微信公众号关注页 微信端微信端实现相对比较简单，首先需要获取公众号关注页的url，步骤如下：1.点击公众号的历史消息2.复制链接3.接下来在微信里直接跳转这个链接即可1window.location.href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzAxNjU0MjEyNA==&amp;scene=123&amp;from=singlemessage&amp;isappinstalled=0#wechat_redirect" 手机QQ直接跳转这个链接即可唤起微信：1window.location.href = 'weixin://'; 但是不能在QQ里跳转微信的那个链接，如下图 平台的判断这里用的到是userAgent，代码如下123456let ua = navigator.userAgent.toLowerCase();if (ua.indexOf("micromessenger") &gt; 0) &#123; //微信端&#125; else if (ua.indexOf("qq") &gt; 0) &#123; //手机qq&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js promise简例及一些注意点]]></title>
     <url>%2F2018%2F05%2F11%2FjsPromise%2F</url>
     <content type="text"><![CDATA[js promise简例及一些注意点 无论promise中的执行结果是什么，它总会给你返回一个状态，成功或者失败1234567891011121314151617181920212223242526272829303132//封装promisefunction getURL(URL) &#123; return new Promise(function (resolve, reject) &#123; var req = new XMLHttpRequest(); req.open('GET', URL, true); req.onload = function () &#123; if (req.status === 200) &#123; resolve(req.responseText); &#125; else &#123; reject(new Error(req.statusText)); &#125; &#125;; req.onerror = function () &#123; reject(new Error(req.statusText)); &#125;; req.send(); &#125;);&#125;//执行var URL = "http:***";getURL(URL).then(function(value) &#123; console.log(value);&#125;).catch(function(error) &#123; console.error(error);&#125;);//也可以这样写//getURL(URL).then(function(value) &#123;// console.log(value);//&#125;, function(error)&#123;// console.error(error);//&#125;) 在angularjs中可以通过$q实现异步操作：通过调用 $q.defer() 可以构建一个新的 deffered 实例,deffered 对象用来将 Promise 实例与 标记任务状态(执行成功还是不成功)的 API 相关联，deffered 对象的方法 resolve(value) ——成功，如果 value 是一个通过 $q.reject 构造的拒绝对象(rejection) , 该promise 将被拒绝。 reject(reason) ——失败，这相当于通过 $q.reject构造的拒绝对象(rejection)作为参数传递给 resolve。 notify(value) ——在 promise 执行的过程中提供状态更新。 这在 promise 被解决或拒绝之前可能会被多次调用。 例子如下： 12345678910111213141516171819202122//封装promisefunction asyncGreet(name) &#123; var deferred = $q.defer(); setTimeout(function () &#123; deferred.notify('即将问候 ' + name + '.'); if (okToGreet(name)) &#123; deferred.resolve('你好, ' + name + '!'); &#125; else &#123; deferred.reject('拒绝问候 ' + name + ' .'); &#125; &#125;, 1000); return deferred.promise;&#125;//执行var promise = asyncGreet('***');promise.then(function (res) &#123;&#125;, function (error) &#123;&#125;, function (update) &#123;&#125;);]]></content>
