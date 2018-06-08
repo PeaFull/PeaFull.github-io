@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[更新cordova时出现的报错及解决方案]]></title>
     <url>%2F2018%2F06%2F08%2FcordovaUpdate%2F</url>
-    <content type="text"><![CDATA[更新cordova时出现的报错及解决方案 今天在利用cordova build安卓apk的时候出现了报错，并且提示更新cordova，于是执行以下命令做更新：1npm install -g cordova 结果出现了报错，如下1npm WARN update-linked node_modules\cordova needs updating to 8.0.0 from 6.4.0 but we can&apos;t, as it&apos;s a symlink 在网上查了半天也没找到原因，于是尝试了先去remove再install，结果成功了，如下12npm remove -g cordovanpm install -g cordova 至于报错的原因，还有待后面研究下…]]></content>
+    <content type="text"><![CDATA[今天在利用cordova build安卓apk的时候出现了报错，并且提示更新cordova，于是执行以下命令做更新：1npm install -g cordova 结果出现了报错，如下1npm WARN update-linked node_modules\cordova needs updating to 8.0.0 from 6.4.0 but we can&apos;t, as it&apos;s a symlink 在网上查了半天也没找到原因，于是尝试了先去remove再install，结果成功了，如下12npm remove -g cordovanpm install -g cordova 至于报错的原因，还有待后面研究下…]]></content>
       <categories>
         <category>编程</category>
       </categories>
