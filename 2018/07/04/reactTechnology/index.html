@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta name="description" content="在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。示例代码如下：">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React的Ref属性在TypeScript中的写法">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/reactRefs/index.html">
+<meta property="og:title" content="react如何在组件外部调用组件内的方法">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/reactTechnology/index.html">
 <meta property="og:site_name" content="PeaFull&#39;s Notes">
-<meta property="og:description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta property="og:description" content="在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。示例代码如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-08T03:09:09.540Z">
+<meta property="og:updated_time" content="2018-07-04T08:48:59.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React的Ref属性在TypeScript中的写法">
-<meta name="twitter:description" content="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：">
+<meta name="twitter:title" content="react如何在组件外部调用组件内的方法">
+<meta name="twitter:description" content="在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。示例代码如下：">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/reactRefs/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/04/reactTechnology/"/>
 
 
 
 
 
-  <title>React的Ref属性在TypeScript中的写法 | PeaFull's Notes</title>
+  <title>react如何在组件外部调用组件内的方法 | PeaFull's Notes</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/reactRefs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/reactTechnology/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PeaFull">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React的Ref属性在TypeScript中的写法</h1>
+          <h1 class="post-title" itemprop="name headline">react如何在组件外部调用组件内的方法</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T12:05:11+08:00">
-                2018-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T16:20:34+08:00">
+                2018-07-04
               </time>
             
 
@@ -367,9 +367,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/04/reactRefs/#comments" itemprop="discussionUrl">
+                <a href="/2018/07/04/reactTechnology/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/04/reactRefs/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/07/04/reactTechnology/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,7 +377,7 @@
 
           
           
-             <span id="/2018/05/04/reactRefs/" class="leancloud_visitors" data-flag-title="React的Ref属性在TypeScript中的写法">
+             <span id="/2018/07/04/reactTechnology/" class="leancloud_visitors" data-flag-title="react如何在组件外部调用组件内的方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  129字
+                  316字
                 </span>
               
 
@@ -439,10 +439,9 @@
       
 
       
-        <h4 id="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><a href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码：" class="headerlink" title="在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码："></a>在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</h4><a id="more"></a>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CustomTextInput <span class="keyword">extends</span> React.Component&lt;&#123;&#125;, &#123;&#125;&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在此处统一定义refs</span></span><br><span class="line">    <span class="keyword">public</span> refs: &#123;</span><br><span class="line">        textInput: HTMLInputElement,</span><br><span class="line">        loadMoreDiv: HTMLElement</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="keyword">const</span> loadMore = <span class="keyword">this</span>.refs.loadMoreDiv;</span><br><span class="line">        <span class="keyword">const</span> myInput = <span class="keyword">this</span>.refs.textInput;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> render() &#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;</span><br><span class="line">            &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> ref= <span class="string">"textInput"</span> /&gt;</span><br><span class="line">            &lt;div ref= <span class="string">"loadMoreDiv"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>转自：<a href="https://goenning.net/2016/11/02/strongly-typed-react-refs-with-typescript/" target="_blank" rel="noopener">Strongly Typed React Refs with TypeScript</a></p>
-
+        <h4 id="在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。"><a href="#在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。" class="headerlink" title="在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。"></a>在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。</h4><h4 id="示例代码如下："><a href="#示例代码如下：" class="headerlink" title="示例代码如下："></a>示例代码如下：</h4><a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//外层组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> Parent <span class="keyword">extends</span> React.Component&lt;&#123;&#125;, &#123;&#125;&gt; &#123;</span><br><span class="line">    <span class="comment">//用一个变量接收子组件的this</span></span><br><span class="line">    <span class="keyword">public</span> child: <span class="built_in">any</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//绑定子组件的this到this.child</span></span><br><span class="line">    bindChild = <span class="function">(<span class="params">ref:<span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.child = ref;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用于调用子组件的方法</span></span><br><span class="line">    click = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.child.myName()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> render() &#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;</span><br><span class="line">            &lt;Child bindChild=&#123;<span class="keyword">this</span>.bindChild&#125; /&gt;</span><br><span class="line">            &lt;button onClick=&#123;<span class="keyword">this</span>.click&#125; &gt;getName&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//子组件</span></span><br><span class="line"><span class="keyword">interface</span> ChildOwnProps &#123;</span><br><span class="line">    bindChild: <span class="built_in">Function</span>;<span class="comment">//提供一个属性，用于把this传递给外部组件</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Child <span class="keyword">extends</span> React.Component&lt;ChildOwnProps&gt; &#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">props:ChildOwnProps</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        <span class="comment">//传递this</span></span><br><span class="line">        <span class="keyword">this</span>.props.bindChild(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//供外部调用的方法</span></span><br><span class="line">    myName = <span class="function"><span class="params">()</span> =&gt;</span> alert(<span class="string">'xiaohesong'</span>)</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;div&gt;child&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。"><a href="#其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。" class="headerlink" title="其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。"></a>其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。</h4>
       
     </div>
     
@@ -472,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/04/Hexo/" rel="next" title="Hexo使用小记">
-                <i class="fa fa-chevron-left"></i> Hexo使用小记
+              <a href="/2018/06/08/cordovaUpdate/" rel="next" title="更新cordova时出现的报错及解决方案">
+                <i class="fa fa-chevron-left"></i> 更新cordova时出现的报错及解决方案
               </a>
             
           </div>
@@ -481,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/04/20180504Essay/" rel="prev" title="20180504随笔">
-                20180504随笔 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -646,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this-refs-XXX，就会在编译的时候报错。参考如下代码："><span class="nav-number">1.</span> <span class="nav-text">在TypeScript中使用ref属性的时候，如果不定义它的类型直接去使用this.refs.XXX，就会在编译的时候报错。参考如下代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。"><span class="nav-number">1.</span> <span class="nav-text">在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例代码如下："><span class="nav-number">2.</span> <span class="nav-text">示例代码如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。"><span class="nav-number">3.</span> <span class="nav-text">其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。</span></a></li></ol></div>
             
 
           </div>
@@ -823,9 +818,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/05/04/reactRefs/';
-          this.page.identifier = '2018/05/04/reactRefs/';
-          this.page.title = 'React的Ref属性在TypeScript中的写法';
+          this.page.url = 'http://yoursite.com/2018/07/04/reactTechnology/';
+          this.page.identifier = '2018/07/04/reactTechnology/';
+          this.page.title = 'react如何在组件外部调用组件内的方法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-peafull-github-io.disqus.com/embed.js';
