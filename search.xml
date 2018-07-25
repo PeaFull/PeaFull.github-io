@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js中的Map和Set]]></title>
+    <url>%2F2018%2F07%2F25%2Fmapset%2F</url>
+    <content type="text"><![CDATA[1.MapMap是一组键值对的结构，具有极快的查找速度，如下：12345678910var m = new Map(); // 创建一个空Map//也可以像这样创建：var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);m.set('leo', 25); // 添加新的key-valuem.set('Bob', 30);m.set(10, "john");m.has('leo'); // 是否存在key 'Adam': truem.get('leo'); // 25m.delete('leo'); // 删除key 'leo'm.get('leo'); // undefinedm.size;// 获取map的长度：2 由于一个key只能对应一个value，所以，多次对一个key放入value，后面的value会把之前的覆盖：12m.set('Bob', 300);m.get('Bob'); // 300 在Map中，key值可以是任何基本类型(String, Number, Boolean, undefined, NaN….)，或者对象(Map, Set, Object, Function , Symbol , null…)2.SetSet和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key123456789var s = new Set(); // 创建一个空Set//也可以像这样创建：var s2 = new Set([1, 2, 3]);var s = new Set([1, 2, 3, 2, 3, '3']);//重复元素在Set中自动被过滤：&#123;1, 2, 3, "3"&#125;var s = new Set();//&#123;&#125;s.add(10);//添加元素s.add(100);s.add("10");//&#123;10, 100, "10"&#125;s.delete(10);//删除：&#123;100, "10"&#125;s.size;//获取长度：2 在Set中，key值可以是任何基本类型(String, Number, Boolean, undefined, NaN….)，或者对象(Map, Set, Object, Function , Symbol , null…)]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[react如何在组件外部调用组件内的方法]]></title>
     <url>%2F2018%2F07%2F04%2FreactTechnology%2F</url>
     <content type="text"><![CDATA[在开发中，难免会遇到这种场景：我们需要在组件外部调用组件内的方法，从而达到在外部操作组件或者获取组件内部数据的目的。示例代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import * as React from "react";//外层组件export class Parent extends React.Component&lt;&#123;&#125;, &#123;&#125;&gt; &#123; //用一个变量接收子组件的this public child: any; constructor() &#123; super(); &#125; //绑定子组件的this到this.child bindChild = (ref:any) =&gt; &#123; this.child = ref; &#125; //用于调用子组件的方法 click = (e) =&gt; &#123; this.child.myName() &#125; public render() &#123; return &lt;div&gt; &lt;Child bindChild=&#123;this.bindChild&#125; /&gt; &lt;button onClick=&#123;this.click&#125; &gt;getName&lt;/button&gt; &lt;/div&gt; &#125;&#125;//子组件interface ChildOwnProps &#123; bindChild: Function;//提供一个属性，用于把this传递给外部组件&#125;class Child extends React.Component&lt;ChildOwnProps&gt; &#123; constructor(props:ChildOwnProps) &#123; super(props); &#125; componentDidMount()&#123; //传递this this.props.bindChild(this); &#125; //供外部调用的方法 myName = () =&gt; alert('xiaohesong') render() &#123; return &lt;div&gt;child&lt;/div&gt; &#125;&#125; 其实原理很简单，即子组件向外提供一个属性，用于把自己的this传递给外部组件，外部组件用一个变量接收子组件传递过来的this之后就可以随意调用子组件内部的方法。]]></content>
