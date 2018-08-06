@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[notes]]></title>
+    <url>%2F2018%2F08%2F06%2Fnotes%2F</url>
+    <content type="text"><![CDATA[记录一些零散的知识点 1、JS的for in循环可以用来遍历对象，用在取用对象中不确定的属性名。12345var person = &#123;fname:"John", lname:"Doe", age:25&#125;;var text = "";for (var key in person) &#123; console.log(text += person[key] + " ");//John Doe 25&#125; 2、JS中substring与substr的区别共同点是都有两个参数，第一个参数的含义都一样，区别是第二个参数：substring为截取到第几位，substr是截取几位，如下：12345var text = "hello world";text.substr(1,2)//eltext.substring(1,2)//e 3、Navigator对象的platform和userAgent区别platform用于判断操作系统平台，例如：12345678var platform = navigator.platform.substr(0, 3);if (platform === "Win") &#123; //windows&#125; else if (platform === "Mac") &#123; //macOS&#125;else&#123; ... ...&#125; UserAgent中文名为用户代理，是Http协议中的一部分，属于头域的组成部分，UserAgent也简称UA。它是一个特殊字符串头，是一种向访问网站提供你所使用的浏览器类型及版本、操作系统及版本、浏览器内核、等信息的标识，一般用于区分用户浏览器的类型及版本，例如：//判断IE浏览器版本12345678910111213141516171819202122232425262728function IEVersion() &#123; var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串 var isIE = userAgent.indexOf("compatible") &gt; -1 &amp;&amp; userAgent.indexOf("MSIE") &gt; -1; //判断是否IE&lt;11浏览器 var isEdge = userAgent.indexOf("Edge") &gt; -1 &amp;&amp; !isIE; //判断是否IE的Edge浏览器 var isIE11 = userAgent.indexOf('Trident') &gt; -1 &amp;&amp; userAgent.indexOf("rv:11.0") &gt; -1; if (isIE) &#123; var reIE = new RegExp("MSIE (\\d+\\.\\d+);"); reIE.test(userAgent); var fIEVersion = parseFloat(RegExp["$1"]); if (fIEVersion == 7) &#123; return 7; &#125; else if (fIEVersion == 8) &#123; return 8; &#125; else if (fIEVersion == 9) &#123; return 9; &#125; else if (fIEVersion == 10) &#123; return 10; &#125; else &#123; return 6;//IE版本&lt;=7 &#125; &#125; else if (isEdge) &#123; return 'edge';//edge &#125; else if (isIE11) &#123; return 11; //IE11 &#125; else &#123; return -1;//不是ie浏览器 &#125;&#125; //区分微信和qq123456let ua = navigator.userAgent.toLowerCase();if (ua.indexOf("micromessenger") &gt; 0) &#123; //微信&#125; else if (ua.indexOf("qq") &gt; 0) &#123; //QQ&#125; 4、number.toLocaleString()toLocaleString() 方法可把一个 Number 对象转换为本地格式的字符串，常用于数值转化成千分位，如下：12var num = 1231231231;console.log(num.toLocaleString());//1,231,231,231 5、P标签中不能嵌套块级标签]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>js html css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js中的Map和Set]]></title>
     <url>%2F2018%2F07%2F25%2Fmapset%2F</url>
     <content type="text"><![CDATA[1.MapMap是一组键值对的结构，具有极快的查找速度，如下：12345678910var m = new Map(); // 创建一个空Map//也可以像这样创建：var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);m.set('leo', 25); // 添加新的key-valuem.set('Bob', 30);m.set(10, "john");m.has('leo'); // 是否存在key 'Adam': truem.get('leo'); // 25m.delete('leo'); // 删除key 'leo'm.get('leo'); // undefinedm.size;// 获取map的长度：2 由于一个key只能对应一个value，所以，多次对一个key放入value，后面的value会把之前的覆盖：12m.set('Bob', 300);m.get('Bob'); // 300 在Map中，key值可以是任何基本类型(String, Number, Boolean, undefined, NaN….)，或者对象(Map, Set, Object, Function , Symbol , null…)2.SetSet和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key123456789var s = new Set(); // 创建一个空Set//也可以像这样创建：var s2 = new Set([1, 2, 3]);var s = new Set([1, 2, 3, 2, 3, '3']);//重复元素在Set中自动被过滤：&#123;1, 2, 3, "3"&#125;var s = new Set();//&#123;&#125;s.add(10);//添加元素s.add(100);s.add("10");//&#123;10, 100, "10"&#125;s.delete(10);//删除：&#123;100, "10"&#125;s.size;//获取长度：2 在Set中，key值可以是任何基本类型(String, Number, Boolean, undefined, NaN….)，或者对象(Map, Set, Object, Function , Symbol , null…)]]></content>
