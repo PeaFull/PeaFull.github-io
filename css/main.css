@@ -1461,10 +1461,11 @@ pre .javascript .function {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #333;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
+  font-weight: bold;
 }
 .posts-expand .post-title-link::before {
   content: "";
@@ -1830,7 +1831,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0f4d13;
+  background: #3e534d;
 }
 .links-of-blogroll {
   font-size: 13px;
